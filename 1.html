@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css面试题</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 200px;
+            background: red;
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background: green;
+            /* position: absolute;
+            top:50%;
+            left:50%;
+            margin-top: -50px;
+            margin-left: -100px; */
+            /* position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+        </div>
+    </div>
+    <script>
+        let ary = [12, 21, 12, 21, 34, 4, 3, 445, 32, 32, 34];
+        function rmeove(ary) {
+            for (let i = 0; i < ary.length; i++) {
+                let item = ary[i];
+                let cur = ary.slice(i + 1);
+                if (cur.indexOf(item) > -1) {
+                    ary[i] = ary[ary.length - 1]
+                    ary.length--;
+                    i--;
+                }
+            }
+            return ary.sort((a, b) => {
+                return a - b;
+            });
+        }
+        console.log(rmeove(ary))
+    </script>
+</body>
+
+</html>
